@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Links</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="enter-overlay" style="
+ position:fixed;
+ inset:0;
+ backdrop-filter: blur(10px);
+ background: rgba(0,0,0,0.6);
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ color:white;
+ font-size:2rem;
+ z-index:99999;
+ cursor:pointer;
+ ">
+ Click to enter...
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- 🎬 Видеофон -->
+<video autoplay loop muted playsinline id="bgvid">
+  <source src="bg.mp4" type="video/mp4">
+</video>
+
+<div class="card">
+  <h2>( _ . _ )  °z Z</h2>
+
+  <div class="profile">
+    <img class="avatar" src="avatar.jpg" alt="avatar">
+    <div class="userinfo">
+      <div class="nickname">Towa</div>
+      <div class="status">zxc? · ❄️</div>
+    </div>
+  </div>
+
+  <section>
+    <h3>📌 Pinned track</h3>
+    <iframe style="border-radius:12px"
+            src="https://music.yandex.ru/track/141101353?utm_source=desktop&utm_medium=copy_link"
+            width="100%" height="152" frameborder="0"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture">
+    </iframe>
+  </section>
+
+  <section>
+    <h3>😊 About me</h3>
+    <ul>
+      <li>🐾 The Gambler. A bit of a programmer.</li>
+      <li>🎮 I like to play Dota2! and other games.</li>
+      <li>🎧 I listen to everything that can be listened to.</li>
+      </a></li>
+    </ul>
+  </section>
+
+  <section>
+    <iframe width="100%" height="230"
+            src=""
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+    </iframe>
+  </section>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const ov = document.getElementById('enter-overlay');
+  const a = document.getElementById('music');
+  function enter(){
+    ov.remove();
+    if(a){ a.play().catch(()=>{}); }
+  }
+  ov.addEventListener('click', enter, {once:true});
+  ov.addEventListener('touchstart', enter, {once:true});
+});
+</script>
+
+
+
+
+
+<style>
+#mini-player {
+ position: fixed;
+ bottom: 20px;
+ right: 20px;
+ background: rgba(20,20,20,0.75);
+ backdrop-filter: blur(12px);
+ border-radius: 16px;
+ padding: 14px 18px;
+ z-index: 9999;
+ display:flex;
+ align-items:center;
+ gap:14px;
+ box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+ color:white;
+ font-family: sans-serif;
+}
+#mp-btn {
+ width:32px;
+ height:32px;
+ cursor:pointer;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+}
+#mp-title {
+ font-size:14px;
+ opacity:0.85;
+}
+</style>
+
+
+  
+<script>
+document.addEventListener("DOMContentLoaded",()=>{
+  const audio = document.getElementById("music");
+  const playIcon = document.getElementById("mp-icon-play");
+  const pauseIcon = document.getElementById("mp-icon-pause");
+  const btn = document.getElementById("mp-btn");
+
+  btn.onclick = ()=>{
+    if(audio.paused){
+      audio.play();
+      playIcon.style.display="none";
+      pauseIcon.style.display="block";
+    } else {
+      audio.pause();
+      playIcon.style.display="block";
+      pauseIcon.style.display="none";
+    }
+  }
+});
+</script>
+
+
+<style>
+#mini-player {
+ position: fixed;
+ bottom: 20px;
+ right: 20px;
+ background: rgba(20,20,20,0.75);
+ backdrop-filter: blur(12px);
+ border-radius: 16px;
+ padding: 14px 18px;
+ z-index: 9999;
+ display:flex;
+ align-items:center;
+ gap:14px;
+ box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+ color:white;
+ font-family: sans-serif;
+}
+#mp-btn {
+ width:32px;
+ height:32px;
+ cursor:pointer;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+}
+#mp-title {
+ font-size:14px;
+ opacity:0.85;
+}
+#volume {
+ width:80px;
+}
+</style>
+
+
+  
+
+<script>
+document.addEventListener("DOMContentLoaded",()=>{
+  const audio = document.getElementById("music");
+  const playIcon = document.getElementById("mp-icon-play");
+  const pauseIcon = document.getElementById("mp-icon-pause");
+  const btn = document.getElementById("mp-btn");
+  const volume = document.getElementById("volume");
+
+  btn.onclick = ()=>{
+    if(audio.paused){
+      audio.play();
+      playIcon.style.display="none";
+      pauseIcon.style.display="block";
+    } else {
+      audio.pause();
+      playIcon.style.display="block";
+      pauseIcon.style.display="none";
+    }
+  };
+
+  volume.oninput = ()=>{
+    audio.volume = volume.value;
+  };
+});
+</script>
+
+
+<style>
+#mini-player {
+ position: fixed;
+ bottom: 20px;
+ right: 20px;
+ background: rgba(20,20,20,0.75);
+ backdrop-filter: blur(12px);
+ border-radius: 16px;
+ padding: 14px 18px;
+ z-index: 9999;
+ display:flex;
+ align-items:center;
+ gap:14px;
+ box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+ color:white;
+ font-family: sans-serif;
+}
+#mp-btn, #mp-mute {
+ width:32px;
+ height:32px;
+ cursor:pointer;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+}
+#mp-title {
+ font-size:14px;
+ opacity:0.85;
+}
+#volume {
+ width:80px;
+}
+</style>
+
+<div id="mini-player">
+  <div id="mp-btn">
+    <svg id="mp-icon-play" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+    <svg id="mp-icon-pause" style="display:none;" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+  </div>
+
+  <div id="mp-mute">
+    <svg id="mp-icon-vol" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M5 9v6h4l5 5V4l-5 5H5z"/></svg>
+    <svg id="mp-icon-muted" style="display:none;" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M16.5 12l4.5 4.5-1.5 1.5L15 13.5 10.5 18H5v-6h4.5L15 4.5l1.5 1.5L12 10.5l4.5 4.5 1.5-1.5L16.5 12z"/></svg>
+  </div>
+
+  <div id="mp-title">Poison Tree</div>
+  <input id="volume" type="range" min="0" max="1" step="0.01" value="1">
+  <audio id="music">
+    <source src="poisontree.mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded",()=>{
+  const audio = document.getElementById("music");
+  const playIcon = document.getElementById("mp-icon-play");
+  const pauseIcon = document.getElementById("mp-icon-pause");
+  const btn = document.getElementById("mp-btn");
+
+  const muteBtn = document.getElementById("mp-mute");
+  const volIcon = document.getElementById("mp-icon-vol");
+  const mutedIcon = document.getElementById("mp-icon-muted");
+
+  const volume = document.getElementById("volume");
+
+  btn.onclick = ()=>{
+    if(audio.paused){
+      audio.play();
+      playIcon.style.display="none";
+      pauseIcon.style.display="block";
+    } else {
+      audio.pause();
+      playIcon.style.display="block";
+      pauseIcon.style.display="none";
+    }
+  };
+
+  volume.oninput = ()=>{
+    audio.volume = volume.value;
+    if(audio.volume > 0){
+        audio.muted = false;
+        volIcon.style.display="block";
+        mutedIcon.style.display="none";
+    }
+  };
+
+  muteBtn.onclick = ()=>{
+    audio.muted = !audio.muted;
+    if(audio.muted){
+        volIcon.style.display="none";
+        mutedIcon.style.display="block";
+    } else {
+        volIcon.style.display="block";
+        mutedIcon.style.display="none";
+    }
+  };
+});
+</script>
+
+</body>
+</html>
