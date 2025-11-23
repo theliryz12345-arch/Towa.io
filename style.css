@@ -50,6 +50,9 @@ body {
   height: 140px;
   border-radius: 50%;
   border: 4px solid #000;
+
+  object-fit: cover;
+  object-position: center;
 }
 
 .userinfo-large {
@@ -87,6 +90,9 @@ a:hover { text-decoration: underline; }
   .card { width: 92%; }
   .card-row { flex-direction: column; align-items: center; }
   .right-column { width: 100%; }
-  .avatar-large { width: 110px; height: 110px; }
+  .avatar-large { width: 110px; height: 110px; 
+  object-fit: cover;
+  object-position: center;
+}
 }
 
